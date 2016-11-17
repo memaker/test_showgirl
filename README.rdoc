@@ -1,0 +1,60 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Git
+
+$ git checkout -b iss53
+$ vim index.html
+$ git commit -a -m 'added a new footer [issue 53]'
+$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+$ vim index.html
+$ git commit -a -m 'fixed the broken email address'
+$ git checkout master
+$ git merge hotfix
+$ git branch -d hotfix
+$ git checkout iss53
+Switched to branch "iss53"
+$ vim index.html
+$ git commit -a -m 'finished the new footer [issue 53]'
+$ git checkout master
+Switched to branch 'master'
+$ git merge iss53
+$ git branch -d iss53
+
+* Configuration
+
+From http://guides.railsgirls.com/app/ and http://guides.railsgirls.com/devise/
+
+gem 'devise'
+$ bundle install
+$ rails generate devise:install
+$ rails generate devise user
+$ rake db:migrate
+
+To install cancancan, follow the guide
+https://github.com/CanCanCommunity/cancancan
+
+To associate ideas to users, just run:
+rails generate migration add_column_user_id_to_ideas user_id:integer
+
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
